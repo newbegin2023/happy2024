@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        border: 0px solid;
+      }
+      body {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+        background: linear-gradient(135deg, #4bc0c8, #bb7ec6, #feac5e);
+      }
+      /* 设置旋转关键帧 */
+      .fu_run {
+        animation: 10s ease infinite mrun1;
+      }
+      @keyframes mrun1 {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(3600deg);
+        }
+      }
+      .page1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        min-width: 500px;
+        /* background: linear-gradient(135deg, #4bc0c8, #c779d0, #feac5e); */
+        background: url(./picture/page1_bg.png);
+      }
+
+      .page2 {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        background: url(./picture/20241.jpg);
+        background-size:cover;
+       
+      }
+
+      .fu {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        background: url(./picture/fu.png);
+        background-size: cover;
+        border: none;
+        margin-bottom: 30px;
+      }
+
+      .rabbit {
+        width: 100px;
+        height: 70px;
+        background: url(./picture/pikaqiu.gif);
+        position: relative;
+        animation: mymove 10s steps(100);
+        background-size: contain;
+
+        border: none;
+        animation-fill-mode: forwards;
+        /* 让动画停在终点 */
+      }
+      @keyframes mymove {
+        from {
+          left: 0px;
+        }
+        to {
+          left: 230px;
+        }
+      }
+
+      .jindutiao {
+        width: 300px;
+        height: 20px;
+        border-radius: 20px;
+        background: linear-gradient(orange 0 0) 0/0% no-repeat lightblue;
+        /* 动画 */
+        animation: p2 10s steps(100);
+
+        /* step是帧，越多动画越流畅 */
+
+        animation-fill-mode: forwards;
+      }
+      @keyframes p2 {
+        100% {
+          background-size: 110%;
+        }
+      }
+      .acr:hover {
+        border-color: #5588ca;
+        color: rgb(40, 54, 209);
+      }
+      .acr {
+        border-radius: 10px;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        margin-top: 5px;
+      }
+      .lanter {
+        display: flex;
+        background: url(./picture/lanter.png);
+        background-size: cover;
+        /* width: 174px;
+        height: 184px; */
+        position: absolute;
+        top: 0px;
+        width: 80px;
+        height: 85px;
+      }
+      .rabbit1 {
+        position: absolute;
+        width: 100px;
+        height: 138px;
+        background: url(./picture/long.png);
+        background-size: cover;
+        left: 4%;
+        top: 410px;
+        transform-origin: center bottom;
+        animation: 2s ease-in-out infinite prun1 -1s;
+      }
+      .rabbit2 {
+        position: absolute;
+        width: 200px;
+        height: 136px;
+        background: url(./picture/rabbit2.png);
+        background-size: cover;
+        right: 4%;
+        top: 410px;
+        transform-origin: center bottom;
+        animation: 2s ease-in-out infinite prun2 -3s;
+      }
+      @keyframes prun1 {
+        0% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(4deg);
+        }
+        100% {
+          transform: rotate(-4deg);
+        }
+      }
+      @keyframes prun2 {
+        0% {
+          transform: rotate(-0.2deg);
+        }
+        50% {
+          transform: rotate(-3.5deg);
+        }
+        100% {
+          transform: rotate(-0.2deg);
+        }
+      }
+      .item {
+        width: 4.5px;
+        height: 20px;
+        margin: 0 1px;
+        background-color: rgb(164, 239, 245);
+        border-radius: 2px;
+        animation: wave2 1.2s infinite ease-in-out;
+        animation-delay: var(--delay);
+        border: 1px solid black;
+      }
+      @keyframes wave2 {
+        0%,
+        20% {
+          transform: scale(1);
+        }
+        40%,
+        100% {
+          transform: scale(0.4);
+        }
+      }
+      .music {
+        width: 30px;
+        height: 30px;
+        background: url(./picture/icon.png);
+        background-size: cover;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+      }
+      .msrun {
+        animation: 2s linear infinite mrun;
+      }
+      @keyframes mrun {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      .box {
+        position: absolute;
+        top: 60px;
+        border: none;
+        height: 52vh;
+        width: 62%;
+        max-width: 600px;
+        background: linear-gradient(135deg, #a8edea, #fed6e3);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+        text-align: justify;
+        color: #333;
+        font-size: 17px;
+        line-height: 1.7;
+        letter-spacing: 0.034em;
+        font-family: "思源黑体";
+        overflow-y: scroll;
+      }
+      .box::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+      .bainian1 {
+        width: 100px;
+        height: 67px;
+        background: url(./picture/bainian.png);
+        background-size: cover;
+        right: 18%;
+        top: 410px;
+        position: absolute;
+        display: none;
+      }
+      .rabbit2:hover ~ .bainian1 {
+          display: flex;
+      }
+
+
+      .bainian2 {
+        width: 130px;
+        height: 90px;
+        background: url(./picture/guadl.png);
+        background-size: cover;
+        left: 17%;
+        top: 410px;
+        position: absolute;
+        display: none;
+      }
+      .rabbit1:hover ~ .bainian2 {
+          display: flex;
+      }
+      #newYear {
+            display: none;
+        }
+        #biaoti{display: flex;}
+
+
+        
+        .box2 {
+          position: absolute;
+        top: 430px;
+        border: black ;
+        height: 50px;
+        width: 50%;
+            background: none;
+            box-sizing: border-box;
+            padding: 0px;
+            margin-top: 5px;
+        }
+
+        .main {
+            position: fixed;
+            width: 120px;
+            height: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 50%;
+            font-family: "STXingkai";
+            display: none;
+            animation: rise 10s linear;
+        }
+
+        .light {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transform-origin: center center;
+            transform: rotateX(-15deg) rotateY(-30deg) translateZ(0px);
+            animation: change 10s linear;
+        }
+
+        .side {
+            position: absolute;
+            width: 80px;
+            height: 120px;
+            text-align: center;
+            line-height: 120px;
+            font-size: 50px;
+            border: 1px solid #9b4400;
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px yellow;
+        }
+
+        .side:nth-child(1) {
+            background: -webkit-linear-gradient(-90deg, #f30, #ff0);
+            transform: rotateX(0deg) translateZ(40px);
+        }
+
+        .side:nth-child(2) {
+            background: -webkit-linear-gradient(90deg, #ff0, #f30);
+            transform: rotateY(180deg) translateZ(40px);
+        }
+
+        .side:nth-child(3) {
+            background: #f30;
+             transform-origin: 0%; 
+            transform: translateZ(1px)rotateX(-90deg) ;
+           
+           
+        }
+
+        .side:nth-child(4) {
+            background: -webkit-linear-gradient(-90deg, #f30, #ff0);
+            transform: rotateY(90deg) translateZ(40px);
+        }
+
+        .side:nth-child(5) {
+            background: -webkit-linear-gradient(-90deg, #f30, #ff0);
+            transform: rotateY(-90deg) translateZ(40px);
+        }
+
+        .top {
+            
+        height: 80px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        
+        }
+
+        .input-text {
+            display: flex;
+            margin: 6px auto;
+            padding: 5px 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            background-color:antiquewhite;
+            border-color: #333;
+            border-width: 1px;
+        }
+
+        .btn {
+            display: flex;
+            margin: auto auto;
+            padding: 5px 15px;
+            font-size: 16px;
+        }
+        .btn2 {
+            display: flex;
+            margin: auto auto;
+            padding: 5px 15px;
+            font-size: 16px;
+        }
+        /* 晃动动画 */
+        @keyframes change {
+            from {
+                transform: rotateX(-45deg) rotateY(-30deg) translateZ(40px);
+            }
+
+            to {
+                transform: rotateX(45deg) rotateY(720deg) translatez(150px);
+            }
+        }
+
+        /* 飘走动画 */
+        @keyframes rise {
+            from {
+                bottom: 0%;
+                transform: scale(0.68);
+            }
+
+            to {
+                bottom: 100%;
+                transform: scale(0.5);
+            }
+        }
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <!-- id page1第一个页面 -->
+    <div class="page1">
+      <div class="fu fu_run"></div>
+
+      <div style="color: rgb(240, 209, 38); font-weight: bold" class="page1-frame">
+       <div style="display: none;"> 农历除夕 23:59:5<span>0</span> </div>
+        
+        <div id="biaoti" style="margin-left: 45px;">春节倒计时</div>
+        <div id="countdownok"></div>
+        <div id="newYear">新的一年到了，春节快乐！</div>
+
+      </div>
+      <div style="border: none; margin-bottom: 5px">
+        <div class="rabbit"></div>
+
+        <div class="jindutiao"></div>
+      </div>
+      <button
+        class="acr"
+        style="font-family: 楷体; font-size: larger"
+        ;
+        onclick="dianji1() "
+      >
+        福气加载中...
+      </button>
+      <div class="container">
+        <span class="item item1" style="--delay: -1.1s"></span>
+        <span class="item item2" style="--delay: -1s"></span>
+        <span class="item item3" style="--delay: -0.9s"></span>
+        <span class="item item4" style="--delay: -0.8s"></span>
+        <span class="item item5" style="--delay: -0.7s"></span>
+      </div>
+    </div>
+
+    <div class="page2">
+      <button
+        style="
+          position: absolute;
+          font-family: 华文琥珀;
+          font-size: medium;
+          left: 20px;
+          top: 25px;
+          border-radius: 20px;
+          border: #333 solid 1px;
+        "
+        class="acr"
+        onclick="dianji2() "
+      >
+        返回首页
+      </button>
+
+      <div style="text-align: center" class="box">
+        <p>⭐新春快乐⭐</p>
+        <p>明霄初升海潮平，漠阳江畔轮月悬，</p>
+        <p>万家灯火辞旧岁，阖家团圆共迎春。</p>
+        <p>亥时忽闻鞭炮声，旧年钟声入新年，</p>
+        <p>东风吹拂瘟疾去，春风送暖入元日。</p>
+        <p>吉虎长啸月出关，灵兔齐奔月更圆，</p>
+        <p>今夜烟火昙花绽，明朝生气吹满城，</p>
+        <p>辞旧迎新共祝愿，幸福安康新一年！</p>
+
+        <p>龙行龘龘，前程朤朤！</p>
+         <p> 新的一年“龙”马精神，未来定能前“兔”似锦！
+          平安无恙!
+        </p>
+        <p>万象更新，再度起航！</p>
+        <p style="text-align: right">le乐</p>
+        <p style="text-align: right">2024年2月9日</p>
+        <div  style="
+            background: url(./picture/haiou.gif);
+            position: relative;
+            left: 85%;
+            bottom: 135%;
+            background-size: cover;
+            height: 70px;
+            width: 70px;
+          "
+        ></div>
+        
+          <button class="acr btn2" onclick="randomRedirect()">点我随机抽取龙龙🎁</button>
+
+      
+        
+      </div>
+
+
+      <div class="box2 ">
+        <div class="main">
+            <div class="light">
+                <div class="side">禧</div>
+                <div class="side">禄</div>
+                <div class="side top"></div>
+                <div class="side">寿</div>
+                <div class="side">福</div>
+            </div>
+        </div>
+  
+            <input type="text" class="input-text" placeholder="请输入4个字 如平安喜乐">
+            <button class="btn acr">点击放飞新年愿望</button>
+    </div>
+
+
+
+
+    </div>
+    <div class="music">
+      <!-- 这里不要添加run 是使用function来决定是否添加run -->
+      <audio src="./picture/happy new year.mp3" loop></audio>
+    </div>
+    <div class="rabbit2" ></div>
+    <div class="rabbit1" ></div>
+    <div class="lanter"></div>
+    
+    
+
+
+
+    <div class="bainian1"></div>
+    <div class="bainian2"></div>
+    <script>
+      musicBg();
+      newyearhope();
+      countDown();
+      countdownok();
+     
+      // dianji1();
+      // 点击的话就不要在这里调用 包括跳转也是
+
+
+      function countdownok() {
+            // 获取当前本地时间
+            var now = new Date().getTime();
+            // 设置目标日期时间（2024年2月10日0点）
+            var target = new Date("2024-02-10 00:00:00").getTime();
+            
+            // 计算剩余时间
+            var remainingTime = target - now;
+            
+            // 如果剩余时间大于0，进行倒计时
+            if (remainingTime > 0) {
+                var days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+                
+                // 显示倒计时
+                document.getElementById("countdownok").innerHTML = days + "天 " + hours + "小时 " + minutes + "分钟 " + seconds + "秒";
+                
+                // 每秒更新倒计时
+                setTimeout(countdownok, 1000);
+            } else {
+                // 隐藏倒计时
+                document.getElementById("countdownok").style.display = "none";
+                
+                // 显示新年到了的消息
+                document.getElementById("newYear").style.display = "flex";
+
+                document.getElementById("biaoti").style.display = "none";
+            }
+        }
+
+      function musicBg() {
+        let music = document.querySelector(".music");
+        // 选择Music的样式
+        let musicAudio = music.querySelector("audio");
+        //选取<div>下的audio这个标签，目的是控制music的播放和暂停
+        musicAudio.volume = 0.03;
+        music.addEventListener("click", function () {
+          if (musicAudio.paused) {
+            this.className = "music msrun";
+            musicAudio.play();
+          } else {
+            this.className = "music";
+            musicAudio.pause();
+          }
+        });
+      }
+
+      function countDown() {
+        let countNumber = document.querySelector(".page1-frame span");
+        let page1 = document.querySelector(".page1");
+        let page2 = document.querySelector(".page2");
+        let container = document.querySelector(".container");
+        let timer = setInterval(() => {
+          if (countNumber.innerHTML == 9) {
+            clearInterval(timer);
+            // page1.style.display = "none";
+            // page2.style.display = "flex";
+            container.style.display = "none";
+            document.querySelector(".acr").innerHTML = "福“倒”啦点击进入";
+            initFires();
+          } else {
+            countNumber.innerHTML = ++countNumber.innerHTML;
+          }
+        }, 1000);
+      }
+
+      function dianji1() {
+        let page1 = document.querySelector(".page1");
+        let page2 = document.querySelector(".page2");
+        page1.style.display = "none";
+        page2.style.display = "flex";
+      }
+      function dianji2() {
+        let page1 = document.querySelector(".page1");
+        let page2 = document.querySelector(".page2");
+        page1.style.display = "flex";
+        page2.style.display = "none";
+      }
+
+      function displayDate(){
+	document.getElementById("demo").innerHTML=Date();
+}
+
+function newyearhope() {
+       var main = document.querySelector(".main");
+        var light = document.querySelector(".light");
+        var btn = document.querySelector(".btn");
+        var inputText = document.querySelector(".input-text");
+        var isAnimating = false;
+
+        btn.addEventListener("click", function() {
+            if (!isAnimating) {
+                var inputVal = inputText.value.trim();
+                if (inputVal.length !== 4) {
+                    alert("请输入4个字！");
+                    return;
+                }
+
+                var sides = document.querySelectorAll(".side");
+                sides[0].textContent = inputVal[0];
+                sides[1].textContent = inputVal[1];
+                sides[3].textContent = inputVal[2];
+                sides[4].textContent = inputVal[3];
+
+                main.style.display = "block";
+                light.style.display = "block";
+                main.classList.remove("rise-animation");
+                light.classList.remove("change-animation");
+                void main.offsetWidth;
+                main.classList.add("rise-animation");
+                light.classList.add("change-animation");
+                isAnimating = true;
+            }
+        });
+
+        main.addEventListener("animationend", function() {
+            main.style.display = "none";
+            light.style.display = "none";
+            isAnimating = false;
+        });
+    }
+
+    function showImage() {
+  var image = document.getElementById("image");
+  image.src = "01.jpg";
+  image.style.display = "flex";
+  
+  // 点击图片或者空白处时，隐藏图片
+  image.onclick = function() {
+    image.style.display = "none";
+  }
+  
+  document.onclick = function(event) {
+    if (event.target != image) {
+      image.style.display = "none";
+    }
+  }
+} 
+
+随机跳转
+function randomRedirect() {
+            var links = ['fox1.html', 'fox2.html', 'fox3.html', 'fox4.html','fox5.html','fox6.html'];
+            var randomIndex = Math.floor(Math.random() * links.length);
+            var randomLink = links[randomIndex];
+            window.location.href = randomLink;
+        }
+
+// window.onload = function() {
+//             var button = document.getElementById("button2024");
+//             var image = document.getElementById("image");
+
+//             button.addEventListener("click", function() {
+//                 image.style.display = "block";
+//             });
+
+//             window.addEventListener("click", function(e) {
+//                 if (e.target.id !== "button2024" && e.target.id !== "image") {
+//                     image.style.display = "none";
+//                 }
+//             });
+//         };
+// 作废代码，本来想点击出图片的
+    </script>
+  </body>
+</html>
